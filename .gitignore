@@ -1,0 +1,26 @@
+*.parquet
+# OS / IDE
+.DS_Store
+.idea
+.vscode/
+
+# Python
+__pycache__/
+.venv/
+.env
+
+# Terraform
+*.tfstate
+*.tfstate.*
+**.terraform
+**.terraform.lock.*
+
+**my-creds.json
+
+# Data files
+*.parquet
+*.csv
+dataset/
+
+# Jupyter
+.ipynb_checkpoints/
