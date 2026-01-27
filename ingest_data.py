@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-
-
 from pathlib import Path
 import click
 import pandas as pd
@@ -10,7 +8,7 @@ from sqlalchemy import create_engine
 from tqdm.auto import tqdm
 
 BASE_DIR = Path(__file__).resolve().parent
-DATA_DIR = BASE_DIR / "dataset"
+DATA_DIR = BASE_DIR / "data"
 
 
 dtype = {
@@ -29,12 +27,12 @@ dtype = {
     "tolls_amount": "float64",
     "improvement_surcharge": "float64",
     "total_amount": "float64",
-    "congestion_surcharge": "float64",
+    "congestion_surcharge": "float64"
 }
 
 parse_dates = [
     "lpep_pickup_datetime",
-    "lpep_dropoff_datetime",
+    "lpep_dropoff_datetime"
 ]
 
 
@@ -46,7 +44,7 @@ parse_dates = [
 @click.option('--pg-db', default='ny_taxi', help='PostgreSQL database name')
 @click.option('--green-table', default='green_trips', help='Target table for green taxi data')
 @click.option('--zones-table', default='zones', help='Target table for zones lookup')
-@click.option('--chunksize', default=100000, type=int, help='Chunk size for loading')
+@click.option('--chunksize', default=10000, type=int, help='Chunk size for loading')
 
 def run(pg_user, pg_pass, pg_host, pg_port, pg_db,
         green_table, zones_table, chunksize):
@@ -73,10 +71,8 @@ def run(pg_user, pg_pass, pg_host, pg_port, pg_db,
     green_file = DATA_DIR / "green_tripdata_2025-11.parquet"
     df = pd.read_parquet(green_file)
 
-    # ensure datetime types
-    for col in parse_dates:
-        if col in df.columns:
-            df[col] = pd.to_datetime(df[col])
+    df["lpep_pickup_datetime"] = pd.to_datetime(df["lpep_pickup_datetime"])
+    df["lpep_dropoff_datetime"] = pd.to_datetime(df["lpep_dropoff_datetime"])
 
     first = True
 
@@ -96,4 +92,4 @@ def run(pg_user, pg_pass, pg_host, pg_port, pg_db,
 
 
 if __name__ == '__main__':
-    run()
+    run()    
