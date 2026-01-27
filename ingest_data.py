@@ -8,7 +8,7 @@ from sqlalchemy import create_engine
 from tqdm.auto import tqdm
 
 BASE_DIR = Path(__file__).resolve().parent
-DATA_DIR = BASE_DIR / "data"
+DATA_DIR = BASE_DIR / "dataset"
 
 
 dtype = {
