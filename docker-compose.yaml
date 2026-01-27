@@ -22,3 +22,4 @@
 volumes:
   vol-pgdata:
   vol-pgadmin_data:
+
