@@ -49,10 +49,10 @@ Developed a comprehensive data pipeline system for ingesting and managing NYC ta
 
 **Key Accomplishments:**
 - Designed and implemented an automated ETL pipeline to ingest large-scale NYC Green Taxi trip data from Parquet files into PostgreSQL database
-- Built a batch processing system handling 10,000+ records per chunk with progress tracking using optimized data loading strategies
+- Built a batch processing system with configurable chunk sizes (default 10,000 records) with progress tracking using optimized data loading strategies
 - Containerized the entire database infrastructure using Docker Compose, orchestrating PostgreSQL and pgAdmin services
 - Developed a CLI application with configurable parameters (database credentials, table names, chunk sizes) for flexible data ingestion
-- Implemented proper data type handling and datetime parsing for 15+ columns of taxi trip data
+- Implemented proper data type handling and datetime parsing for 18 columns of taxi trip data
 - Created a relational database schema integrating trip data with zone lookup tables for geographical analysis
 - Utilized SQLAlchemy ORM for database connectivity and pandas for efficient data transformation
 - Set up pgAdmin interface for database monitoring and query execution on port 8080

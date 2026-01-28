@@ -4,7 +4,7 @@ A comprehensive data engineering project that implements an ETL pipeline for ing
 
 ## Project Overview
 
-This project demonstrates database engineering skills through the development of an automated data pipeline that processes NYC Green Taxi trip data. The system uses containerized PostgreSQL database, batch processing with Python, and provides a flexible CLI for data ingestion.
+This project demonstrates database engineering skills through the development of an automated data pipeline that processes NYC Green Taxi trip data. The system uses a containerized PostgreSQL database, batch processing with Python, and provides a flexible CLI for data ingestion.
 
 ## Features
 
