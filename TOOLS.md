@@ -108,7 +108,7 @@ ENTRYPOINT ["python", "pipeline.py"]
 - Reading Parquet files: `pd.read_parquet()`
 - Reading CSV files: `pd.read_csv()`
 - Data type conversions and validation
-- DateTime parsing and manipulation
+- datetime parsing and manipulation
 - DataFrame slicing for batch processing
 - SQL table insertion: `df.to_sql()`
 
@@ -117,7 +117,7 @@ ENTRYPOINT ["python", "pipeline.py"]
 # Read Parquet file
 df = pd.read_parquet(green_file)
 
-# DateTime conversion
+# datetime conversion
 df["lpep_pickup_datetime"] = pd.to_datetime(df["lpep_pickup_datetime"])
 
 # Batch processing
